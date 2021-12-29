@@ -6,7 +6,7 @@
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 14:03:59 by graja             #+#    #+#             */
-/*   Updated: 2021/12/29 17:36:10 by graja            ###   ########.fr       */
+/*   Updated: 2021/12/29 17:59:30 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ std::ostream	&operator<<(std::ostream &o, Fixed const &nbr)
 
 /* comparison Overloads */
 
-bool	operator==(Fixed const a, Fixed const b)
+bool	operator==(Fixed const &a, Fixed const &b)
 {
 	if (a.getRawBits() == b.getRawBits())
 		return true;
@@ -89,7 +89,7 @@ bool	operator==(Fixed const a, Fixed const b)
 		return false;
 }
 
-bool	operator!=(Fixed const a, Fixed const b)
+bool	operator!=(Fixed const &a, Fixed const &b)
 {
 	if (a.getRawBits() != b.getRawBits())
 		return true;
@@ -97,7 +97,7 @@ bool	operator!=(Fixed const a, Fixed const b)
 		return false;
 }
 
-bool	operator>=(Fixed const a, Fixed const b)
+bool	operator>=(Fixed const &a, Fixed const &b)
 {
 	if (a.getRawBits() >= b.getRawBits())
 		return true;
@@ -105,7 +105,7 @@ bool	operator>=(Fixed const a, Fixed const b)
 		return false;
 }
 	
-bool	operator<=(Fixed const a, Fixed const b)
+bool	operator<=(Fixed const &a, Fixed const &b)
 {
 	if (a.getRawBits() <= b.getRawBits())
 		return true;
@@ -113,7 +113,7 @@ bool	operator<=(Fixed const a, Fixed const b)
 		return false;
 }
 
-bool	operator<(Fixed const a, Fixed const b)
+bool	operator<(Fixed const &a, Fixed const &b)
 {
 	if (a.getRawBits() < b.getRawBits())
 		return true;
@@ -121,10 +121,37 @@ bool	operator<(Fixed const a, Fixed const b)
 		return false;
 }
 
-bool	operator>(Fixed const a, Fixed const b)
+bool	operator>(Fixed const &a, Fixed const &b)
 {
 	if (a.getRawBits() > b.getRawBits())
 		return true;
 	else
 		return false;
+}
+
+
+/* arithmic overloads */
+
+Fixed	&operator+(Fixed const &a, Fixed const &b)
+{
+	this->setRawBits(a.getRawBits() + b.getRawBits());
+	return (*this);
+}
+
+Fixed	&operator-(Fixed const &a, Fixed const &b)
+{
+	this->setRawBits(a.getRawBits() - b.getRawBits());
+	return (*this);
+}
+
+Fixed	&operator*(Fixed const &a, Fixed const &b)
+{
+	this->setRawBits(a.getRawBits() * b.getRawBits());
+	return (*this);
+}
+
+Fixed	&operator/(Fixed const &a, Fixed const &b)
+{
+	this->setRawBits(a.getRawBits() / b.getRawBits());
+	return (*this);
 }
