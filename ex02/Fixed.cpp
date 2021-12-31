@@ -6,7 +6,7 @@
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 14:03:59 by graja             #+#    #+#             */
-/*   Updated: 2021/12/31 11:19:44 by graja            ###   ########.fr       */
+/*   Updated: 2021/12/31 12:23:54 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,3 +142,14 @@ Fixed	Fixed::operator/(const Fixed& a) const
 	return (this->toFloat() / a.toFloat());
 }
 
+Fixed&	Fixed::operator++(void)
+{
+	this->_value++;
+	return (*this);
+}
+
+Fixed&	Fixed::operator--(void)
+{
+	this->_value--;
+	return (*this);
+}

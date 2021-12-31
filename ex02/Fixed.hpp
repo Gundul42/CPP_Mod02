@@ -6,7 +6,7 @@
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 13:38:08 by graja             #+#    #+#             */
-/*   Updated: 2021/12/31 11:14:58 by graja            ###   ########.fr       */
+/*   Updated: 2021/12/31 12:22:35 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,15 @@ class	Fixed
 		static int const	_fract = 8;
 
 	public:
+		//constructors
 		Fixed(void);
 		Fixed(int const init);
 		Fixed(float const init);
+
+		//copy constructor
 		Fixed(Fixed const &src);
+
+		//destructor
 		~Fixed(void);
 
 		Fixed	&operator=(Fixed const &ovr);
@@ -44,6 +49,10 @@ class	Fixed
 		Fixed	operator-(const Fixed& a) const;
 		Fixed	operator*(const Fixed& a) const;
 		Fixed	operator/(const Fixed& a) const;
+
+		//arithmic pre/post in/decrement overloads
+		Fixed&	operator++(void);
+		Fixed&	operator--(void);
 
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
