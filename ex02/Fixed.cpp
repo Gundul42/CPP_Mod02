@@ -6,7 +6,7 @@
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 14:03:59 by graja             #+#    #+#             */
-/*   Updated: 2021/12/31 12:23:54 by graja            ###   ########.fr       */
+/*   Updated: 2021/12/31 14:18:28 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,35 +15,35 @@
 
 Fixed::Fixed(void) : _value(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+//	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(int init)
 {
-	std::cout << "INT constructor called" << std::endl;
+//	std::cout << "INT constructor called" << std::endl;
 	this->setRawBits(init);
 }
 
 Fixed::Fixed(float const init)
 {
-	std::cout << "FLOAT constructor called" << std::endl;
+//	std::cout << "FLOAT constructor called" << std::endl;
 	this->setRawBits(init);
 }
 
 Fixed::Fixed(Fixed const &src)
 {
-	std::cout << "Copy constructor called" << std::endl;
+//	std::cout << "Copy constructor called" << std::endl;
 	*this = src;
 }
 
 Fixed::~Fixed(void)
 {
-	std::cout << "Destructor called" << std::endl;
+//	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed	&Fixed::operator=(Fixed const &ovr)
 {
-	std::cout << "Assignment operator called" << std::endl;
+//	std::cout << "Assignment operator called" << std::endl;
 	this->_value = ovr.getRawBits();
 	return (*this);
 }
@@ -142,6 +142,8 @@ Fixed	Fixed::operator/(const Fixed& a) const
 	return (this->toFloat() / a.toFloat());
 }
 
+// arithmic in/decrement postfix
+
 Fixed&	Fixed::operator++(void)
 {
 	this->_value++;
@@ -153,3 +155,38 @@ Fixed&	Fixed::operator--(void)
 	this->_value--;
 	return (*this);
 }
+
+// arithmic in/decrement prefix
+
+Fixed	Fixed::operator++(int)
+{
+	Fixed	tmp(*this);
+
+	operator++();
+	return (tmp);
+}
+
+Fixed	Fixed::operator--(int)
+{
+	Fixed	tmp(*this);
+
+	operator++();
+	return (tmp);
+}
+		
+static Fixed&	Fixed::min(const Fixed& a, const Fixed& b)
+{
+	if (a < b)
+		return (a);
+	else
+		return (b);
+}
+
+static Fixed&	Fixed::min(Fixed& a, Fixed& b)
+{
+	if (a < b)
+		return (a);
+	else
+		return (b);
+}
+
