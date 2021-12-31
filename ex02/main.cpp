@@ -6,7 +6,7 @@
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 14:33:34 by graja             #+#    #+#             */
-/*   Updated: 2021/12/29 16:33:57 by graja            ###   ########.fr       */
+/*   Updated: 2021/12/31 11:13:48 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,10 @@ int	main( void )
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	if (b <= d)
+		std::cout << "b and d are EQUAL" << std::endl;
+	if (a != d)
+		std::cout << " a and d are NOT EQUAL" << std::endl;
+	std::cout << a << " + " << c << " = " << a + c << std::endl;
 	return (0);
 }

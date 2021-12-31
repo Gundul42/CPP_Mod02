@@ -6,7 +6,7 @@
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 13:38:08 by graja             #+#    #+#             */
-/*   Updated: 2021/12/29 17:58:14 by graja            ###   ########.fr       */
+/*   Updated: 2021/12/31 11:14:58 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,19 @@ class	Fixed
 
 		Fixed	&operator=(Fixed const &ovr);
 
-		bool	operator==(Fixed const &a, Fixed const &b);
-		bool	operator!=(Fixed const &a, Fixed const &b);
-		bool	operator>=(Fixed const &a, Fixed const &b);
-		bool	operator<=(Fixed const &a, Fixed const &b);
-		bool	operator<(Fixed const &a, Fixed const &b);
-		bool	operator>(Fixed const &a, Fixed const &b);
+		//comparison operator overloads
+		bool	operator==(const Fixed& a) const;
+		bool	operator!=(const Fixed& a) const;
+		bool	operator>(const Fixed& a) const;
+		bool	operator<(const Fixed& a) const;
+		bool	operator>=(const Fixed& a) const;
+		bool	operator<=(const Fixed& a) const;
 
-		Fixed	&operator+(Fixed const &a, Fixed const &b);
-		Fixed	&operator-(Fixed const &a, Fixed const &b);
-		Fixed	&operator*(Fixed const &a, Fixed const &b);
-		Fixed	&operator/(Fixed const &a, Fixed const &b);
+		//arithmic operator overloads
+		Fixed	operator+(const Fixed& a) const;
+		Fixed	operator-(const Fixed& a) const;
+		Fixed	operator*(const Fixed& a) const;
+		Fixed	operator/(const Fixed& a) const;
 
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
