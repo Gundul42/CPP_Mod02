@@ -6,13 +6,13 @@
 #    By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/27 14:36:06 by graja             #+#    #+#              #
-#    Updated: 2022/01/01 13:45:29 by graja            ###   ########.fr        #
+#    Updated: 2022/01/01 15:25:34 by graja            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	ex03
 
-SRCS	=	Fixed.cpp Point.cpp main.cpp
+SRCS	=	Fixed.cpp Point.cpp bsp.cpp main.cpp
 
 CC	=	c++
 

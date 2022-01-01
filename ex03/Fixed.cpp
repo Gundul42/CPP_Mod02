@@ -6,7 +6,7 @@
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 14:03:59 by graja             #+#    #+#             */
-/*   Updated: 2022/01/01 12:35:13 by graja            ###   ########.fr       */
+/*   Updated: 2022/01/01 16:56:14 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Fixed::Fixed(float const init)
 	this->setRawBits(init);
 }
 
-Fixed::Fixed(Fixed const &src)
+Fixed::gixed(Fixed const &src)
 {
 	*this = src;
 }
