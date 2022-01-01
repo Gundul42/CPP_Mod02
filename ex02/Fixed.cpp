@@ -6,7 +6,7 @@
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 14:03:59 by graja             #+#    #+#             */
-/*   Updated: 2021/12/31 14:18:28 by graja            ###   ########.fr       */
+/*   Updated: 2022/01/01 12:35:13 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,35 +15,29 @@
 
 Fixed::Fixed(void) : _value(0)
 {
-//	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(int init)
 {
-//	std::cout << "INT constructor called" << std::endl;
 	this->setRawBits(init);
 }
 
 Fixed::Fixed(float const init)
 {
-//	std::cout << "FLOAT constructor called" << std::endl;
 	this->setRawBits(init);
 }
 
 Fixed::Fixed(Fixed const &src)
 {
-//	std::cout << "Copy constructor called" << std::endl;
 	*this = src;
 }
 
 Fixed::~Fixed(void)
 {
-//	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed	&Fixed::operator=(Fixed const &ovr)
 {
-//	std::cout << "Assignment operator called" << std::endl;
 	this->_value = ovr.getRawBits();
 	return (*this);
 }
@@ -174,19 +168,30 @@ Fixed	Fixed::operator--(int)
 	return (tmp);
 }
 		
-static Fixed&	Fixed::min(const Fixed& a, const Fixed& b)
+const Fixed&	Fixed::min(const Fixed& a, const Fixed& b)
 {
 	if (a < b)
 		return (a);
-	else
-		return (b);
+	return (b);
 }
 
-static Fixed&	Fixed::min(Fixed& a, Fixed& b)
+Fixed&	Fixed::min(Fixed& a, Fixed& b)
 {
 	if (a < b)
 		return (a);
-	else
-		return (b);
+	return (b);
 }
 
+const Fixed&	Fixed::max(const Fixed& a, const Fixed& b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}
+
+Fixed&	Fixed::max(Fixed& a, Fixed& b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}

@@ -6,7 +6,7 @@
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 13:38:08 by graja             #+#    #+#             */
-/*   Updated: 2021/12/31 14:18:18 by graja            ###   ########.fr       */
+/*   Updated: 2022/01/01 12:33:05 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,10 @@ class	Fixed
 		Fixed	operator--(int);
 		
 		//min/max
-		static Fixed&	min(const Fixed& a, const Fixed& b);
+		static const Fixed&	min(const Fixed& a, const Fixed& b);
 		static Fixed&	min(Fixed& a, Fixed& b);
+		static const Fixed&	max(const Fixed& a, const Fixed& b);
+		static Fixed&	max(Fixed& a, Fixed& b);
 
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
@@ -69,6 +71,7 @@ class	Fixed
 		int		toInt(void) const;
 };
 
+//output stream overload std::ostream cannot be a member function
 std::ostream	&operator<<(std::ostream &o, Fixed const &nbr);
 
 #endif
