@@ -6,11 +6,14 @@
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/02 12:57:39 by graja             #+#    #+#             */
-/*   Updated: 2022/01/02 14:07:47 by graja            ###   ########.fr       */
+/*   Updated: 2022/01/02 14:21:12 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
+
+/* considering a line from Point b to Point c this function returns true or false
+depending on if Point a is right or left from this line */
 
 static
 bool	rorl(Point const a, Point const b, Point const c)
@@ -23,6 +26,9 @@ bool	rorl(Point const a, Point const b, Point const c)
 		return (true);
 	return (false);
 }
+
+/* If Point check is on the same side looking from each triangle line connecting
+ * it's verixes it is inside the triangle, else it's not */
 
 bool	bsp(Point const a, Point const b, Point const c, Point const check)
 {
