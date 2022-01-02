@@ -6,7 +6,7 @@
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/02 12:57:39 by graja             #+#    #+#             */
-/*   Updated: 2022/01/02 13:58:21 by graja            ###   ########.fr       */
+/*   Updated: 2022/01/02 14:07:47 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ bool	rorl(Point const a, Point const b, Point const c)
 	return (false);
 }
 
-bool	bsp(Point const a, Point const b, Point const c, Point check)
+bool	bsp(Point const a, Point const b, Point const c, Point const check)
 {
 	if (rorl(check, a, b) && rorl(check, b, c) && rorl(check, c, a))
 		return (true);
