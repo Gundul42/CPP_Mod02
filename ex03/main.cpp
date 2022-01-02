@@ -6,7 +6,7 @@
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 13:41:39 by graja             #+#    #+#             */
-/*   Updated: 2022/01/02 12:37:15 by graja            ###   ########.fr       */
+/*   Updated: 2022/01/02 13:58:56 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@ int main( void )
 {
 	Point	a(2.0, 3.5);
 	Point	b(7.5, 9.0);
-	Point	c = a; //(9.5, 1.5);
-	Fixed	test;
+	Point	c(9.5, 1.5);
+	Point	d(6, 5.5);
 
-	test = c.getYVal() + a.getYVal();
-	std::cout << test << std::endl;
+	if (bsp(a, b, c, d))
+		std::cout << "Point d is in the triangle" << std::endl;
+	else
+		std::cout << "Point d is NOT in the triangle" << std::endl;
 	return 0;
 }
