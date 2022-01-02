@@ -6,7 +6,7 @@
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/01 13:14:42 by graja             #+#    #+#             */
-/*   Updated: 2022/01/01 14:10:12 by graja            ###   ########.fr       */
+/*   Updated: 2022/01/02 12:28:09 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ class	Point
 	public	:
 		Point(void);
 		Point(float const a, float const b);
-		Point(Point const& cpy);
+		Point(Point& cpy);
 
 		~Point(void);
 
-		Point&	operator=(Point const& src);
+		Point&	operator=(Point& src);
 
-		Fixed	getXVal(Point const src)const;
-		Fixed	getYVal(Point const src)const;
+		Fixed	getXVal(void) const;
+		Fixed	getYVal(void) const;
 };
 
 #endif
